@@ -129,7 +129,7 @@ public class Sprite {
         int one = randOne.nextInt(x);
         int two = randTwo.nextInt(y);
 
-        while(one < 20 || two < 20){
+        while(one < 50 || two < 50){
             one = randOne.nextInt(x);
             two = randTwo.nextInt(y);
         }

@@ -83,7 +83,7 @@ public class GameView extends SurfaceView implements
         appleEaten = false;
         appleSprite = context.getResources().getDrawable(R.drawable.apple);
         apple = new Sprite(0,0);
-        apple.spawnRandom(X_RESOLUTION-20,Y_RESOLUTION-20);
+        apple.spawnRandom(X_RESOLUTION-50,Y_RESOLUTION-50);
 
 
     }
@@ -195,7 +195,7 @@ public class GameView extends SurfaceView implements
 
     public void spawnApple(){
         if(appleEaten){
-            apple.spawnRandom(X_RESOLUTION-30, Y_RESOLUTION-30);
+            apple.spawnRandom(X_RESOLUTION-50, Y_RESOLUTION-50);
             appleEaten=false;
         }
     }
@@ -309,6 +309,7 @@ public class GameView extends SurfaceView implements
         }
 
         int i = 0;
+        GameModel.getInstance().setSpritesToAddLock(true);
         for (Sprite s : GameModel.getInstance().getSpritesToAdd()) {
             int xPos = Math.round(s.getX());
             int yPos = Math.round(s.getY());
@@ -326,6 +327,7 @@ public class GameView extends SurfaceView implements
 
             i++;
         }
+        GameModel.getInstance().setSpritesToAddLock(false);
 
 
 
